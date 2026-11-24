@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MathLearn | Quadratic Equations Guide</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #172033;
+    line-height: 1.6;
+}
+
+header {
+    background: #102a56;
+    color: white;
+    padding: 25px 15px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 30px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 35px auto;
+    padding: 25px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #102a56;
+    margin-bottom: 12px;
+}
+
+.price {
+    color: #087a42;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.account {
+    background: #f0f5ff;
+    padding: 15px;
+    border-radius: 9px;
+    margin: 15px 0;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0;
+    border: 1px solid #ccd3df;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button, .link-button {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #1558bd;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 12px;
+}
+
+button:hover, .link-button:hover {
+    opacity: 0.9;
+}
+
+.whatsapp {
+    background: #25D366;
+}
+
+.download {
+    background: #102a56;
+}
+
+#result {
+    display: none;
+    text-align: center;
+}
+
+.note {
+    color: #64748b;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #64748b;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>MathLearn</h1>
+    <p>Learn Mathematics. Understand Better.</p>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>Quadratic Equations Complete Guide</h2>
+
+        <p>
+            Get a comprehensive 100-page PDF guide covering
+            quadratic equations, calculations, examples and
+            different solving methods.
+        </p>
+
+        <div class="price">₦485</div>
+
+        <p>One-time payment for the PDF guide.</p>
+    </div>
+
+    <div class="card" id="paymentForm">
+
+        <h2>Make Your Payment</h2>
+
+        <p>Transfer ₦485 to the PalmPay account below.</p>
+
+        <div class="account">
+            <p><strong>Bank:</strong> PalmPay</p>
+            <p><strong>Account Name:</strong> Confirm the account name in your PalmPay app</p>
+            <p><strong>Account Number:</strong> 8104772515</p>
+        </div>
+
+        <label>Enter your payment transaction reference:</label>
+
+        <input
+            type="text"
+            id="reference"
+            placeholder="Enter transaction reference"
+            required
+        >
+
+        <button onclick="submitPayment()">
+            I Have Made Payment
+        </button>
+
+        <p class="note">
+            Your payment reference will be prepared for submission
+            to the seller for confirmation.
+        </p>
+
+    </div>
+
+    <div class="card" id="result">
+
+        <h2>Payment Submitted!</h2>
+
+        <p>
+            Your payment reference has been submitted for
+            confirmation. Please wait for the seller to confirm
+            your payment.
+        </p>
+
+        <a
+            class="link-button whatsapp"
+            href="https://whatsapp.com/channel/0029VbEVypZAojYkV8J4tY14"
+            target="_blank"
+            rel="noopener"
+        >
+            Join Inote WhatsApp Channel
+        </a>
+
+        <p class="note">
+            The channel is public. Joining it does not mean
+            your payment has been verified.
+        </p>
+
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 MathLearn. All rights reserved.</p>
+</footer>
+
+<script>
+function submitPayment() {
+
+    const reference = document
+        .getElementById("reference")
+        .value.trim();
+
+    if (reference === "") {
+        alert("Please enter your payment reference.");
+        return;
+    }
+
+    // Replace this with your own WhatsApp number.
+    const sellerNumber = "234XXXXXXXXXX";
+
+    const message =
+        "Hello, I have paid ₦485 for the Quadratic Equations Guide. " +
+        "My payment reference is: " + reference;
+
+    const whatsappURL =
+        "https://wa.me/" + sellerNumber +
+        "?text=" + encodeURIComponent(message);
+
+    // Show the submission message and channel link.
+    document.getElementById("paymentForm").style.display = "none";
+    document.getElementById("result").style.display = "block";
+
+    // Open WhatsApp to send the payment reference.
+    window.open(whatsappURL, "_blank");
+}
+</script>
+
+</body>
+</html>
